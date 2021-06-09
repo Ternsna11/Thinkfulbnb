@@ -29,11 +29,7 @@ section.alternate-background {
   background-color: #00a699;
   color: #fff;
 }
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+
 
 main img {
   width: 100%;
@@ -54,12 +50,15 @@ main img {
 .item-double {
   flex: 2;
 }
+.item img{
+  width: 100%;
+}
 
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  /* padding: 20px 20px 0 20px; */
+  padding: 20px 20px 0 20px;
   text-align: center;
 }
 
@@ -69,13 +68,12 @@ header {
   color: #fff;
 }
 
-header nav {
-  display: flex;
-  justify-content: center;
-}
-
 header nav ul {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
 }
 
 header nav ul li {
@@ -95,21 +93,17 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
-  display: flex;
-  flex: 1;
   border: 2px solid #ff385c;
   padding: 10px;
 }
 
 form label {
-  display: inline-block;
   font-weight: bold;
-  margin-right: 15px;
-  /* text-align: left; */
 }
 
 form div {
-  /* justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
 }
 
 form select,
@@ -118,13 +112,13 @@ form input {
   width: 180px;
 }
 
-#btn {
+form button {
   background-color: #ff385c;
   border: none;
   color: #fff;
   font-size: 24px;
   padding: 15px;
-  width: 100% !important;
+  width: 100%;
 }
 
 /* -------  Footer ------- */
@@ -144,49 +138,53 @@ footer p {
 @media all and (min-width: 480px) {
   header {
     display: flex;
-    justify-content: space-between;
-    padding: 0;
-  }
-
-  .logo {
-    margin: 14px 0 14px 20px;
-    padding-top: 0;
-    font-size: 42px;
-  }
-
-  header nav ul {
-    align-items: center;
-  }
-
-  .group {
-    flex: 1;
     flex-direction: row;
-    /* align-items: stretch; */
-    /* justify-content: flex-end; */
+    justify-content: space-between;
+    
   }
 
   form {
-    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
+    justify-content: space-between;
+  } 
+  
 
   form div {
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+   
   }
 
   form button {
-    flex: 1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 50px;
   }
-  form label {
-    /* display: block; */
-    flex: 1;
-  }
-
+  
   form select,
   form input {
     margin-bottom: 0px;
-    flex: 1;
+    width: 180px;
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+  }
+  #ideas .group{
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  #ideas div{
+    display: flex;
+    flex-basis: calc(50% - 40px);
+    justify-content: center;
+    flex-direction: column;
   }
 }
+
